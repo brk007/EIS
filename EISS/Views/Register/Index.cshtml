@@ -1,4 +1,4 @@
-﻿@model LoginViewModel
+﻿@model RegisterViewModel
 
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <link rel="stylesheet" href="~/css/login.css" type="text/css">
@@ -13,11 +13,15 @@
             <img src=/images/logo-large.png id="logo-large" alt="Belediye" />
         </div>
 
-        <form class="w-75 mx-auto p-4 mt-3 shadow" asp-action="Login">
+        <form class="w-75 mx-auto p-4 mt-3 shadow" asp-action="Register">
             <div class="form-group">
                 <input asp-for="@Model.UserName." class="form-control">
                 <input asp-for="@Model.Password" class="form-control">
-                <input type="submit" class="fadeIn fourth" value="Giriş Yap">
+                <input asp-for="@Model.ConfirmPassword" class="form-control">
+                <input asp-for="@Model.Name" class="form-control">
+                <input asp-for="@Model.SurName" class="form-control">
+                <input asp-for="@Model.Email" class="form-control">
+                <input type="submit" class="fadeIn fourth" value="Kayıt Yap">
 
             </div>
         </form>

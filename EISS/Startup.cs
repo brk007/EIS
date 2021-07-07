@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using EIS.Context;
 
 namespace EISS
 {
@@ -17,6 +18,9 @@ namespace EISS
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<EISContext>();
+            services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<EISContext>();
+            services.AddControllersWithViews();
             services.AddMvc(options => options.EnableEndpointRouting = false);
             services.AddOptions();
         }
