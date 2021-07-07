@@ -1,0 +1,147 @@
+﻿@{ Layout = "~/Views/Shared/_MyLayout.cshtml"; }
+
+<!doctype html>
+
+    <div class="row">
+        <div class="col-md-5">
+            <div class="box-widget widget-module">
+                <div class="widget-head clearfix">
+                    <span class="h-icon"><i class="fa fa-tasks"></i></span>
+                    <h4>To Do</h4>
+                    <ul class="widget-action-bar pull-right">
+                        <li>
+                            <span class="waves-effect w-reload"><i class="fa fa-spinner"></i></span>
+                        </li>
+                        <li>
+                            <span class="widget-remove waves-effect w-remove"><i class="ico-cross"></i></span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="widget-container">
+                    <div class="todo-list">
+                        <div class="todo-list-item">
+                            <div class="todo-list-action">
+                                <input type="checkbox" name="todo-select" class="todo-select">
+                            </div>
+                            <div class="todo-list-details">
+                                <div class="todo-intro">
+                                    <h4>Send payments to all sellers </h4>
+                                    <div class="todo-date">
+                                        <label class="label label-info"> New</label>
+                                        <label class="label label-warning"> High</label>
+                                        <div class="todo-due-date">
+                                            <i class="fa fa-clock-o"></i>Due By: Jun 16 at 12:00 PM
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="todo-list-item">
+                            <div class="todo-list-action">
+                                <input type="checkbox" name="todo-select" class="todo-select">
+                            </div>
+                            <div class="todo-list-details">
+                                <div class="todo-intro">
+                                    <h4>Fix jQuery $noConflict issue </h4>
+                                    <div class="todo-date">
+                                        <label class="label label-info"> New</label>
+                                        <label class="label label-default"> low</label>
+                                        <div class="todo-due-date">
+                                            <i class="fa fa-clock-o"></i>Due By: Jun 16 at 12:00 PM
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="todo-list-item">
+                            <div class="todo-list-action">
+                                <input type="checkbox" name="todo-select" class="todo-select">
+                            </div>
+                            <div class="todo-list-details">
+                                <div class="todo-intro">
+                                    <h4>Fix all database errors </h4>
+                                    <div class="todo-date">
+                                        <div class="todo-due-date">
+                                            <i class="fa fa-clock-o"></i>Due By: Jun 16 at 12:00 PM
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="todo-list-item">
+                            <div class="todo-list-action">
+                                <input type="checkbox" name="todo-select" class="todo-select">
+                            </div>
+                            <div class="todo-list-details">
+                                <div class="todo-intro">
+                                    <h4>Create a backup sever </h4>
+                                    <div class="todo-date">
+                                        <div class="todo-due-date">
+                                            <i class="fa fa-clock-o"></i>Due By: Jun 16 at 12:00 PM
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="todo-list-item">
+                            <div class="todo-list-action">
+                                <input type="checkbox" name="todo-select" class="todo-select">
+                            </div>
+                            <div class="todo-list-details">
+                                <div class="todo-intro">
+                                    <h4>Add a offloaded mysql to users </h4>
+                                    <div class="todo-date">
+                                        <div class="todo-due-date">
+                                            <i class="fa fa-clock-o"></i>Due By: Jun 16 at 12:00 PM
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="todo-list-item todo-completed">
+                            <div class="todo-list-action">
+                                <input type="checkbox" name="todo-select" class="todo-select">
+                            </div>
+                            <div class="todo-list-details">
+                                <div class="todo-intro">
+                                    <h4>Setup git on new VPS </h4>
+                                    <div class="todo-date">
+                                        <div class="todo-due-date">
+                                            <i class="fa fa-clock-o"></i>Due By: Jun 16 at 12:00 PM
+                                        </div>
+                                        <div class="todo-complete-date">
+                                            <i class="fa fa-calendar-o"></i>Completed By: Jun 18 at 11:00 PM
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="todo-list-item todo-due">
+                            <div class="todo-list-action">
+                                <input type="checkbox" name="todo-select" class="todo-select">
+                            </div>
+                            <div class="todo-list-details">
+                                <div class="todo-intro">
+                                    <h4>Check load balancer</h4>
+                                    <div class="todo-date">
+                                        <label class="label label-danger"> Past Due</label>
+                                        <label class="label label-warning"> High</label>
+                                        <div class="todo-due-date">
+                                            <i class="fa fa-clock-o"></i>Due By: Jun 16 at 12:00 PM
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="todo-load">
+                        <a class="load-more" href="#">Load More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,52 @@
+﻿
+@{ Layout = "~/Views/Shared/_MyLayout.cshtml"; }
+<div class="row">
+    <div class="col-md-12">
+        <div class="box-widget widget-module">
+            <div class="widget-head clearfix">
+                <span class="h-icon"><i class="fa fa-calendar"></i></span>
+                <h4>Custom calendar view</h4>
+            </div>
+            <div class="widget-container">
+                <div class="calendar-toolbar">
+                    <div class="row">
+                        <div class="col-md-6 col-md-offset-3">
+                            <div class="select-cal-view">
+                                <div class="btn-group">
+                                    <button class="btn btn-link CalMonthView">Month</button>
+                                    <button class="btn btn-link CalAgendaWeekView">Week</button>
+                                    <button class="btn btn-link CalAgendaDayView">Day</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 col-sm-8">
+                            <div class="calendar-nav">
+                                <div class="btn-group">
+                                    <button class="btn btn-default CalPrev">Prev</button>
+                                    <button class="btn btn-default CalNext">Next</button>
+                                    <button class="btn btn-default CalToday">Today</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-md-offset-4 col-sm-4">
+                            <div class="input-group">
+                                <input type="text" class="form-control cal-date-picker" placeholder="Select a Date">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default cal-goDate">Go</button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div id="event-calendar">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

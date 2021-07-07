@@ -1,0 +1,129 @@
+﻿<!doctype html>
+<html>
+
+<!-- Mirrored from www.lab.westilian.com/matmix-admin/list-view/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 02 Jul 2021 11:25:39 GMT -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A Components Mix Bootstarp 3 Admin Dashboard Template">
+    <meta name="author" content="Westilian">
+    @await Html.PartialAsync("_PanelLayoutCssPartial")
+</head>
+<body>
+
+    <div class="page-container list-menu-view">
+
+        <div class="left-aside desktop-view">
+            <div class="aside-branding">
+                <div class="text-center">
+                    <a href="index-2.html" class="iconic-logo">
+                        <img src="~/images/logo-large.png" class="rounded" alt="Responsive image" height: auto; .img-fluid. max-width: 100%;>
+                    </a>
+                </div>
+                    <span class="aside-pin waves-effect"><i class="fa fa-thumb-tack"></i></span>
+                    <span class="aside-close waves-effect"><i class="fa fa-times"></i></span>
+                </div>
+                <div class="left-navigation">
+                    <ul class="list-accordion">
+                        <li>
+                            <a href="#" class="waves-effect"><span class="nav-icon"><i class="fa fa-home"></i></span><span class="nav-label">Profil</span></a>
+                            <ul>
+                                <li>
+                                    <a href="dashboard-01.html">Ayarlar</a>
+                                </li>
+                                <li>
+                                    <a href="dashboard-02.html">Çıkış</a>
+                                </li>
+                                <li>
+                                    <a href="dashboard-02.html">Kullanıcı Listesi</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="waves-effect"><span class="nav-icon"><i class="fa fa-align-justify"></i></span><span class="nav-label">Duyurular</span></a>
+                            <ul>
+                                <li>
+                                    <a href="basic-forms.html">Duyuru Paneli</a>
+                                </li>
+                                <li>
+                                    <a href="advanced-form-elements.html">Duyurular</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="widgets.html"><span class="nav-icon"><i class="ico-hammer-wrench"></i></span><span class="nav-label">Destek</span></a>
+                        </li>
+                        <li>
+                            <a href="calendar.html"><span class="nav-icon"><i class="fa fa-calendar"></i></span><span class="nav-label">Takvim</span></a>
+                        </li>
+                        <li>
+                            <a href="note.html"><span class="nav-icon"><i class="ico-pen"></i></span><span class="nav-label">Notlar</span> </a>
+                        </li>
+                        <li>
+                            <a href="task.html"><span class="nav-icon"><i class="fa fa-tasks"></i></span><span class="nav-label">Yapılacaklar Listesi</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        <div class="page-content">
+            <header class="top-bar">
+                <div class="container-fluid top-nav">
+
+                    <div class="row">
+                        <div class="col-md-12 responsive-fix" >
+                            <div class="left">
+                                <span class="leftbar-action-mobile waves-effect"><i class="fa fa-bars "></i></span>
+                                <span class="leftbar-action desktop waves-effect"><i class="fa fa-bars "></i></span>
+                            </div>
+                            <div class="right">
+                                <div class="user-nav">
+                                    <ul>
+                                        <li class="dropdown">
+                                            <a data-toggle="dropdown" href="#" class="clearfix dropdown-toggle waves-effect waves-block waves-classic text-right">
+                                                <span class="user-info">Ahmet Mehmet <cite>ahmet@gmail.com</cite></span>
+                                                <span class="user-thumb"><img src="~/images/avatar/doge-1-584.jpg" alt="image"></span>
+                                            </a>
+                                            <ul role="menu" class="dropdown-menu fadeInUp">
+                                                <li>
+                                                    <a href="#"><span class="user-nav-icon"><i class="fa fa-briefcase"></i></span><span class="user-nav-label">Hesabım</span></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#"><span class="user-nav-icon"><i class="fa fa-cogs"></i></span><span class="user-nav-label">Ayarlar</span></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#"><span class="user-nav-icon"><i class="fa fa-lock"></i></span><span class="user-nav-label">Çıkış</span></a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            @RenderBody()
+            <footer class="footer-container">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6">
+                            <div class="footer-left">
+                                <span>&copy; 2021 <a href="https://www.konyaalti.bel.tr/">Konyaaltı Belediyesi</a></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+
+    </div>
+
+</body>
+@await Html.PartialAsync("_PanelLayoutJsPartial")
+<!-- Mirrored from www.lab.westilian.com/matmix-admin/list-view/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 02 Jul 2021 11:25:39 GMT -->
+</html>
+
+
+
