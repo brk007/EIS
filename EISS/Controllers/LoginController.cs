@@ -1,4 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using EIS.Context;
+using EIS.Models;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,15 +9,32 @@ using System.Threading.Tasks;
 
 namespace EIS.Controllers
 {
+    
     public class LoginController : Controller
     {
+        private readonly SignInManager<AppUser> _signInManager;
+        public LoginController(SignInManager<AppUser> signInManager)
+        {
+            _signInManager = signInManager;
+        }
         public IActionResult Index()
         {
-            return View();
+            return View(new LoginViewModel());
         }
-        public IActionResult Login()
+        [HttpPost]
+        public async Task<IActionResult> Login(LoginViewModel model)
         {
-            return View();
+            if (ModelState.IsValid)
+            {
+               var identityResult = await _signInManager.PasswordSignInAsync(model.UserName, model.Password, model.CookieRemember, false);
+
+                if (identityResult.Succeeded)
+                {
+                    return RedirectToAction("Index", "Home");
+                }
+                ModelState.AddModelError("", "Kullanıcı adı veya parola hatalı");
+            }
+            return View("Index", model);
         }
     }
 }

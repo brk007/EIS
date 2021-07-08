@@ -19,7 +19,23 @@ namespace EISS
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<EISContext>();
-            services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<EISContext>();
+            services.AddIdentity<AppUser, AppRole>(opt=> {
+                opt.Password.RequireNonAlphanumeric = false;
+                opt.Password.RequireDigit = false;
+                opt.Password.RequiredLength = 2;
+                opt.Password.RequireUppercase = false;
+                opt.Password.RequireLowercase = false;            
+            }).AddEntityFrameworkStores<EISContext>();
+
+            services.ConfigureApplicationCookie(opt =>
+            {
+                opt.Cookie.HttpOnly = true;
+                opt.Cookie.Name = "Cookie";
+                opt.Cookie.SameSite = SameSiteMode.Strict;
+                opt.Cookie.SecurePolicy = CookieSecurePolicy.SameAsRequest;
+                opt.ExpireTimeSpan = TimeSpan.FromDays(20);
+            });
+
             services.AddControllersWithViews();
             services.AddMvc(options => options.EnableEndpointRouting = false);
             services.AddOptions();
