@@ -9,6 +9,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using EIS.Context;
+using EIS.CustomValidator;
 
 namespace EISS
 {
@@ -21,14 +22,18 @@ namespace EISS
             services.AddDbContext<EISContext>();
             services.AddIdentity<AppUser, AppRole>(opt=> {
                 opt.Password.RequireNonAlphanumeric = false;
-                opt.Password.RequireDigit = false;
+                opt.Password.RequireDigit = false;  
                 opt.Password.RequiredLength = 2;
                 opt.Password.RequireUppercase = false;
-                opt.Password.RequireLowercase = false;            
-            }).AddEntityFrameworkStores<EISContext>();
+                opt.Password.RequireLowercase = false;
+                
+                opt.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(60);
+                opt.Lockout.MaxFailedAccessAttempts = 4;
+            }).AddErrorDescriber<CustomIdentityValidator>().AddEntityFrameworkStores<EISContext>();
 
             services.ConfigureApplicationCookie(opt =>
             {
+                opt.LoginPath = new PathString("/Home/Index");
                 opt.Cookie.HttpOnly = true;
                 opt.Cookie.Name = "Cookie";
                 opt.Cookie.SameSite = SameSiteMode.Strict;
@@ -37,7 +42,7 @@ namespace EISS
             });
 
             services.AddControllersWithViews();
-            services.AddMvc(options => options.EnableEndpointRouting = false);
+            services.AddMvc(options => { options.EnableEndpointRouting = false;});
             services.AddOptions();
         }
 
@@ -51,6 +56,7 @@ namespace EISS
             app.UseStaticFiles();
             app.UseRouting();
 
+            app.UseAuthorization();
             app.UseAuthentication();
             app.UseMvc(routes => {
                 routes.MapRoute(

@@ -1,6 +1,27 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
-ALOOO YARDIM
+﻿
+
+@{ Layout = "~/Views/Shared/_MyLayout.cshtml"; }
+ 
+<table class="table table-hover table-sm">
+    <tr>
+        <th>Resim:</th>
+        <td>@Model.PictureUrl</td>
+    </tr>
+    <tr>
+        <th>İsim:</th>
+        <td>@Model.Name</td>
+    </tr>
+    <tr>
+        <th>Soyisim:</th>
+        <td>@Model.Surname</td>
+    </tr>
+    <tr>
+        <th>Email:</th>
+        <td>@Model.Email</td>
+    </tr>
+    <tr>
+        <th>Telefon:</th>
+        <td>@Model.PhoneNumber</td>
+    </tr>
+
+</table>

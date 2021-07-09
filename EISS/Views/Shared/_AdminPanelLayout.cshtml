@@ -29,7 +29,8 @@
                 <ul class="list-accordion">
                     @if (User.Identity.IsAuthenticated & User.IsInRole("Admin"))
                     {
-                    <li><a href="#" class="waves-effect"><span class="nav-icon"><i class="fa fa-home"></i></span><span class="nav-label">Admin</span></a></li>}
+        <li><a href="#" class="waves-effect"><span class="nav-icon"><i class="fa fa-home"></i></span><span class="nav-label">Admin</span></a></li>
+}
                     <li>
                         <a asp-action="Index" asp-controller="User" onclick="Index()" class="fa fa-home">Profil</a>
                     </li>
@@ -98,7 +99,18 @@
                     </div>
                 </div>
             </header>
-            @RenderBody()
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="list-group">
+                        <a asp-action="Users" as-controller="Admin" class="list-group-item list-group-item-action">Kullanıcılar</a>
+                        <a asp-action="Roles" as-controller="Admin" class="list-group-item list-group-item-action">Roller</a>
+                        <a asp-action="RoleList" as-controller="UserController" class="list-group-item list-group-item-action">Duyurular</a>
+                        <a asp-action="RoleList" as-controller="UserController" class="list-group-item list-group-item-action">Takvim</a>
+                    </div>
+                </div>
+
+                @RenderBody()
+            </div>
             <footer class="footer-container">
                 <div class="container-fluid">
                     <div class="row">

@@ -1,0 +1,16 @@
+﻿@{ Layout = "~/Views/Shared/_AdminPanelLayout.cshtml"; }
+
+<div class="col-md-8">
+    <a asp-action="AddRole" asp-controller="Admin" class="btn btn-info btn-sm my-2">Yeni Rol Ekle</a>
+    <table class="table table-sm table-hover">
+        <tr>
+            <td>Ad</td>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Name</td>
+            </tr>
+        }
+    </table>
+</div>

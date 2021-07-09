@@ -26,7 +26,13 @@ namespace EIS.Controllers
         {
             if (ModelState.IsValid)
             {
-               var identityResult = await _signInManager.PasswordSignInAsync(model.UserName, model.Password, model.CookieRemember, false);
+               var identityResult = await _signInManager.PasswordSignInAsync(model.UserName, model.Password, model.CookieRemember, true);
+
+                if (identityResult.IsLockedOut)
+                {
+                    ModelState.AddModelError("", "Hesabınız kilitlendi");
+                    return View("Index", model);
+                }
 
                 if (identityResult.Succeeded)
                 {

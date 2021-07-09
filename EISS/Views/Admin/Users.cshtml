@@ -1,0 +1,17 @@
+﻿@{ Layout = "~/Views/Shared/_AdminPanelLayout.cshtml"; }
+
+<div class="col-md-8">
+    <a href="">Kullanıcılar</a>
+
+    <table class="table table-sm table-hover">
+        <tr>
+            <td>Ad</td>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Name</td>
+            </tr>
+        }
+    </table>
+</div>
