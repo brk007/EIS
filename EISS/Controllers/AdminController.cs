@@ -1,5 +1,6 @@
 ﻿using EIS.Context;
 using EIS.Models;
+using EISS.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -38,8 +39,9 @@ namespace EIS.Controllers
         }
         public IActionResult AddUser()
         {
-            return View(new Users());
+            return View("Index", "Register");
         }
+
         [HttpPost]
         public async Task<IActionResult> AddRole(RoleViewModel model)
         {

@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 
 namespace EIS.Controllers
 {
-    
     public class LoginController : Controller
     {
         private readonly SignInManager<AppUser> _signInManager;

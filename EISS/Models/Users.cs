@@ -8,21 +8,20 @@ using System.Threading.Tasks;
 
 namespace EISS.Models
 {
-    public class User
+    public class Users
     {
-        [Required(ErrorMessage = "Ad alanı gerekiyor")]
-        [Display(Name = "Ad :")]
+        [Required(ErrorMessage = "Kullanıcı Adı gerekiyor")]
+        [Display(Name = "Kullanıcı Adı :")]
         public string UserName { get; set; }
-        [Required(ErrorMessage = "Ad alanı gerekiyor")]
+        [Required(ErrorMessage = "Ad gerekiyor")]
         [Display(Name = "Ad :")]
         public string Name { get; set; }
-        [Required(ErrorMessage = "Ad alanı gerekiyor")]
-        [Display(Name = "Ad :")]
+        [Required(ErrorMessage = "Soyad gerekiyor")]
+        [Display(Name = "Soyad :")]
         public string Surname { get; set; }
-        [Required(ErrorMessage = "Ad alanı gerekiyor")]
-        [Display(Name = "Ad :")]
+        [Required(ErrorMessage = "Parola gerekiyor")]
+        [Display(Name = "Parola :")]
         public string Password { get; set; }
-
 
     }
 }

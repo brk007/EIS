@@ -41,7 +41,7 @@ namespace EIS.Controllers
 
                 if (result.Succeeded)
                 {
-                    return RedirectToAction("Index", "Login");
+                    return RedirectToAction("Index", "Admin");
                 }
                 foreach(var error in result.Errors)
                 {

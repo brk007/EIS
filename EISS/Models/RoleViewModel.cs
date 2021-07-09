@@ -8,8 +8,8 @@ namespace EIS.Models
 {
     public class RoleViewModel
     {
-        [Required(ErrorMessage ="Ad alanı gerekiyor")]
-        [Display(Name="Ad :")]
+            [Required(ErrorMessage ="Ad alanı gerekiyor")]
+            [Display(Name="Ad :")]
         public string Name { get; set; }
     }
 }
