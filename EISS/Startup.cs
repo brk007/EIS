@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using EIS.Context;
 using EIS.CustomValidator;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 namespace EISS
 {
@@ -33,7 +34,7 @@ namespace EISS
 
             services.ConfigureApplicationCookie(opt =>
             {
-                opt.LoginPath = new PathString("/Home/Index");
+                opt.LoginPath = new PathString("/Login/Index");
                 opt.Cookie.HttpOnly = true;
                 opt.Cookie.Name = "Cookie";
                 opt.Cookie.SameSite = SameSiteMode.Strict;
@@ -64,7 +65,6 @@ namespace EISS
                     template: "{controller=Home}/{action=Index}/{id?}"
                 );
             });
-
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapGet("/", async context =>

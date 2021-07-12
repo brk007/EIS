@@ -8,6 +8,7 @@ namespace EIS.Context
 {
     public class AppUser:IdentityUser<int>
     {
+        public string PictureUrl { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }
 

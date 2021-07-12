@@ -31,7 +31,7 @@
                     {
                     <li><a href="#" class="waves-effect"><span class="nav-icon"><i class="fa fa-home"></i></span><span class="nav-label">Admin</span></a></li>}
                     <li>
-                        <a asp-action="Index" asp-controller="User" onclick="Index()" class="fa fa-home">Profil</a>
+                        <a asp-action="Index" as-controller="User" class="user-nav-label">Hesabım</a>
                     </li>
                     <li>
                         <a href="#" class="waves-effect"><span class="nav-icon"><i class="fa fa-align-justify"></i></span><span class="nav-label">Duyurular</span></a>
@@ -73,17 +73,17 @@
                                 <div class="user-nav">
                                     <ul>
 
-                                        <li class="dropdown">
+                                        <li class="dropdown-right" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             <a data-toggle="dropdown" href="#" class="clearfix dropdown-toggle waves-effect waves-block waves-classic text-right">
                                                 <span class="user-info">AA<cite>BBB</cite></span>
                                                 <span class="user-thumb"><img src="~/images/avatar/doge-1-584.jpg" alt="image"></span>
                                             </a>
-                                            <ul role="menu" class="dropdown-menu fadeInUp">
+                                            <ul role="menu" class="dropdown-menu">
                                                 <li>
-                                                    <a href="#"><span class="user-nav-icon"><i class="fa fa-briefcase"></i></span><span class="user-nav-label">Hesabım</span></a>
+                                                    <a asp-action="Index" as-controller="UserController" class="user-nav-label fa fa-cogs">Hesabım</a>
                                                 </li>
                                                 <li>
-                                                    <a href="#"><span class="user-nav-icon"><i class="fa fa-cogs"></i></span><span class="user-nav-label">Ayarlar</span></a>
+                                                    <a href=""><span class="user-nav-icon"><i class="fa fa-cogs"></i></span><span class="user-nav-label">Ayarlar</span></a>
                                                 </li>
                                                 <li>
                                                     <a href="#"><span class="user-nav-icon"><i class="fa fa-lock"></i></span><span class="user-nav-label">Çıkış</span></a>
