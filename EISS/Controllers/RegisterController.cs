@@ -1,5 +1,6 @@
 ﻿using EIS.Context;
 using EIS.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -9,6 +10,7 @@ using System.Threading.Tasks;
 
 namespace EIS.Controllers
 {
+    [Authorize(Roles ="Admin")]
     public class RegisterController : Controller
     {
         private readonly UserManager<AppUser> _userManager;

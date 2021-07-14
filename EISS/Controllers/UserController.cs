@@ -7,15 +7,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace EISS.Controllers
+namespace EIS.Controllers
 {
     [Authorize]
     public class UserController : Controller
     {
+        private readonly SignInManager<AppUser> _signInManager;
         private readonly UserManager<AppUser> _userManager;
-        public UserController(UserManager<AppUser> userManager)
+        public UserController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager)
         {
             _userManager = userManager;
+            _signInManager = signInManager;
         }
         public async Task<IActionResult> Index()
         {
@@ -26,6 +28,13 @@ namespace EISS.Controllers
         public IActionResult EveryoneAccess()
         {
             return View();
+        }
+
+        public async Task<IActionResult> UserExit()
+        {
+            await _signInManager.SignOutAsync();
+            return RedirectToAction("Index", "Login");
+            
         }
     }
 }

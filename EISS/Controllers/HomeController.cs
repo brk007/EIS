@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace EISS.Controllers
+namespace EIS.Controllers
 {
     public class HomeController : Controller
     {
@@ -8,6 +8,7 @@ namespace EISS.Controllers
             {
                 return View();
             }
+            
     }
 }
 

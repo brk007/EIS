@@ -29,32 +29,37 @@
                 <ul class="list-accordion">
                     @if (User.Identity.IsAuthenticated & User.IsInRole("Admin"))
                     {
-                    <li><a href="#" class="waves-effect"><span class="nav-icon"><i class="fa fa-home"></i></span><span class="nav-label">Admin</span></a></li>}
+                <li><a asp-action="Index" asp-controller="Admin" class="user-nav-label">Admin</a></li>
+}
                     <li>
-                        <a asp-action="Index" as-controller="User" class="user-nav-label">Hesabım</a>
+                        <a asp-action="Index" asp-controller="User" class="user-nav-label">Hesabım</a>
                     </li>
                     <li>
-                        <a href="#" class="waves-effect"><span class="nav-icon"><i class="fa fa-align-justify"></i></span><span class="nav-label">Duyurular</span></a>
+                        <a asp-action="Index" asp-controller="Announcements" class="waves-effect">Duyurular</a>
                         <ul>
+
+                            @if (User.Identity.IsAuthenticated & User.IsInRole("Boss"))
+                            {
+                                <li>
+                                    <a asp-action="Index" asp-controller="Announcements" class="user-nav-label">Duyuru Panel</a>
+                                </li>
+                            }
                             <li>
-                                <a href="basic-forms.html">Duyuru Paneli</a>
-                            </li>
-                            <li>
-                                <a href="advanced-form-elements.html">Duyurular</a>
+                                <a asp-action="Index" asp-controller="Announcements" class="user-nav-label">Duyurular</a>
                             </li>
                         </ul>
                     </li>
                     <li>
-                        <a href="widgets.html"><span class="nav-icon"><i class="ico-hammer-wrench"></i></span><span class="nav-label">Destek</span></a>
+                        <a asp-action="Index" asp-controller="Calendar" class="ico-hammer-wrench">Takvim</a>
                     </li>
                     <li>
-                        <a href="calendar.html"><span class="nav-icon"><i class="fa fa-calendar"></i></span><span class="nav-label">Takvim</span></a>
+                        <a asp-action="Index" asp-controller="ToDoList" class="ico-hammer-wrench">Yapılacaklar Listesi</a>
                     </li>
                     <li>
-                        <a href="note.html"><span class="nav-icon"><i class="ico-pen"></i></span><span class="nav-label">Notlar</span> </a>
+                        <a asp-action="Index" asp-controller="Notes" class="ico-hammer-wrench">Notlar</a>
                     </li>
                     <li>
-                        <a href="task.html"><span class="nav-icon"><i class="fa fa-tasks"></i></span><span class="nav-label">Yapılacaklar Listesi</span></a>
+                        <a asp-action="Index" asp-controller="Help" class="ico-hammer-wrench">Yardım</a>
                     </li>
                 </ul>
             </div>
@@ -80,13 +85,10 @@
                                             </a>
                                             <ul role="menu" class="dropdown-menu">
                                                 <li>
-                                                    <a asp-action="Index" as-controller="UserController" class="user-nav-label fa fa-cogs">Hesabım</a>
+                                                    <a asp-action="Index" asp-controller="User" class="user-nav-label fa fa-cogs">Hesabım</a>
                                                 </li>
                                                 <li>
-                                                    <a href=""><span class="user-nav-icon"><i class="fa fa-cogs"></i></span><span class="user-nav-label">Ayarlar</span></a>
-                                                </li>
-                                                <li>
-                                                    <a href="#"><span class="user-nav-icon"><i class="fa fa-lock"></i></span><span class="user-nav-label">Çıkış</span></a>
+                                                    <a asp-action="UserExit" asp-controller="User" class="user-nav-label fa fa-cogs">Çıkış</a>
                                                 </li>
                                             </ul>
                                         </li>
@@ -111,7 +113,7 @@
                 </div>
             </footer>
         </div>
-    </div>}
+    </div>
 
 </body>
 @await Html.PartialAsync("_PanelLayoutJsPartial")

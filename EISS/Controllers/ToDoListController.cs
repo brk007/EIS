@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace EISS.Controllers
+namespace EIS.Controllers
 {
     public class ToDoListController : Controller
     {
