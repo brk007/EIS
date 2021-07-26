@@ -11,6 +11,8 @@ using Microsoft.AspNetCore.Mvc;
 using EIS.Context;
 using EIS.CustomValidator;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using EIS.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace EISS
 {
@@ -21,7 +23,7 @@ namespace EISS
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<EISContext>();
-            services.AddIdentity<AppUser, AppRole>(opt=> {
+                services.AddIdentity<AppUser, AppRole>(opt=> {
                 opt.Password.RequireNonAlphanumeric = false;
                 opt.Password.RequireDigit = false;  
                 opt.Password.RequiredLength = 2;
@@ -36,7 +38,7 @@ namespace EISS
             {
                 opt.LoginPath = new PathString("/Login/Index");
                 opt.Cookie.HttpOnly = true;
-                opt.Cookie.Name = "Cookie";
+                opt.Cookie.Name = "Ahmedulrecat";
                 opt.Cookie.SameSite = SameSiteMode.Strict;
                 opt.Cookie.SecurePolicy = CookieSecurePolicy.SameAsRequest;
                 opt.ExpireTimeSpan = TimeSpan.FromDays(20);

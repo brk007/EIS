@@ -4,21 +4,34 @@
 <div class="row">
     <div class="col-md-12">
         <div class="box-widget widget-module">
-            <div class="card-block text-center">
-                <h4 class="card-title">Notlarım</h4>
-            <ul class="list-group">
-                <li class="list-group-item list-group-item-primary">Bla bla bla</li>
-                <li class="list-group-item list-group-item-secondary">Bla bla bla</li>
-                <li class="list-group-item list-group-item-success">Bla bla bla</li>
-                <li class="list-group-item list-group-item-danger">Bla bla bla</li>
-                <li class="list-group-item list-group-item-warning">Bla bla bla</li>
-                <li class="list-group-item list-group-item-info">Bla bla bla</li>
-            </ul>
-            </div>
-            <div class="col-md-12 text-center">
-                <button type="button" class="btn btn-primary">Düzenle</button>
-            </div>
+            <table class="table table-sm table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">Not</th>
+                        <th scope="col">Eylem</th>
+                    </tr>
+                </thead>
 
+                <tr>
+                    <td class="text-primary">Kodları Düzenle </td>
+                    <td>
+                        <button type="button" class="btn btn-primary">Düzenle</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-success">Çarşıya Git</td>
+                    <td>
+                        <button type="button" class="btn btn-primary">Düzenle</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-danger">Diş Macunu al </td>
+                    <td>
+                        <button type="button" class="btn btn-primary">Düzenle</button>
+                    </td>
+                </tr>
+            </table>
+            <a asp-action="Add" asp-controller="ToDoList" class="btn btn-info btn-sm my-2">Ekle</a>
         </div>
     </div>
 </div>

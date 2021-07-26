@@ -20,7 +20,7 @@ namespace EIS.Controllers
         {
             var message = new MimeMessage();
             message.From.Add(new MailboxAddress("Test", mail));
-            message.To.Add(new MailboxAddress("Burak", "buraak0071@gmail.com"));
+            message.To.Add(new MailboxAddress("Burak", "burak@gmail.com"));
             message.Subject = (subject);
             message.Body = new TextPart("plain")
             {

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using EIS.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -14,5 +15,6 @@ namespace EIS.Context
             optionsBuilder.UseSqlServer("server=BIMEMRES\\BIMSTAJER;database=EISIdentity; user id=sa; password=q1w2e3r4;");
             base.OnConfiguring(optionsBuilder);
         }
+        public DbSet<AnnouncementViewModel> AspNetAnnouncements { get; set; }
     }
 }

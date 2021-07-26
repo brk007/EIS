@@ -1,0 +1,35 @@
+﻿@{ Layout = "~/Views/Shared/_MyLayout.cshtml"; }
+
+<div class="list-group ">
+    <a class="list-group-item list-group-item-action ">
+        <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">Deneme</h5>
+            <small class="text-muted">28.07.2021</small>
+        </div>
+        <p class="mb-1">Bu bir deneme duyurusudur.</p>
+    </a>
+    @if (User.Identity.IsAuthenticated & User.IsInRole("Admin"))
+    {<div class="align-self-md-center">
+            <a asp-action="Add" asp-controller="Announcement" class="btn btn-info btn-sm my-2 float-right">Düzenle</a>
+            <a asp-action="Add" asp-controller="Announcement" class="btn btn-danger btn-sm my-2 float-right">Sil</a>
+        </div>
+    }
+    <br><br>
+    <a class="list-group-item list-group-item-action flex-column align-items-start">
+        <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">Deneme</h5>
+            <small class="text-muted">28.07.2021</small>
+        </div>
+        <p class="mb-1">Piston Aşşağı</p>
+        @if (User.Identity.IsAuthenticated & User.IsInRole("Admin"))
+        {
+            <a asp-action="Add" asp-controller="Announcement" class="btn btn-info btn-sm my-2">Düzenle</a>
+            <a asp-action="Add" asp-controller="Announcement" class="btn btn-danger btn-sm my-2">Sil</a>
+        }
+    </a>
+    <br><br>
+    @if (User.Identity.IsAuthenticated & User.IsInRole("Admin"))
+    {
+        <a asp-action="Add" asp-controller="Announcement" class="btn btn-success btn-sm my-2">Yeni Duyuru Ekle</a>
+    }
+</div>
